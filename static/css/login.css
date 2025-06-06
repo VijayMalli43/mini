@@ -1,0 +1,130 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to right, #f3e9ff, #e6eafc);
+    color: #333;
+    text-align: center;
+}
+
+/* Navbar Styling */
+.navbar {
+    height: 70px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.logo-heading {
+    font-family: 'Georgia', serif;
+    color: #444;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+/* Welcome Section Styling */
+.welcome-container {
+    padding: 60px 20px;
+    color: #fff;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.intro-text h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #fffcf9;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.intro-text p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #f9f9f9;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    font-size: 18px;
+    margin: 20px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #a33114;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: #333;
+    transform: translateY(-3px);
+}
+
+/* Feature Box Styling */
+.feature-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* Entry animation for feature boxes */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature-box {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    margin: 15px;
+    padding: 25px;
+    width: 280px;
+    height: 200px;
+    text-align: left;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    border-top: 5px solid #a33114;
+    animation: fadeInUp 0.6s ease both;
+    animation-delay: calc(0.2s * var(--animation-order));
+}
+
+/* Hover Effect */
+.feature-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.feature-box h3 {
+    color: #a33114;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.feature-box p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+    text-shadow: 0.5px 0.5px 3px rgba(0, 0, 0, 0.1);
+}

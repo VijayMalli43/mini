@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lib-sys</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/page1.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <img class="logo" src="{{ url_for('static', filename='images/bookFinder-logo.jpeg') }}" alt="Book Image">
+            <div class="logo-heading">
+                <h1 style="padding: 0px; margin-top: 10px">BookFinder</h1>
+            </div>
+        </div>
+        <div class="header">
+            <div class="left-sec">
+                <ul>
+                    <li class="list-cls">
+                        <a href="{{ url_for('home') }}">Home</a>
+                        <a href="#about">About</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="right-sec">
+                <button id="logout" class="logout-class">Logout</button>
+            </div>
+        </div>
+    </header>
+    
+    <div class="main">
+      <div class="img-div">
+          <img class="img-class" src="{{ url_for('static', filename='images/background-img10.jpg') }}">
+          <div class="text-quote">
+            <p class="quote">
+                "<span class="text-1">Find Your</span> <span class="text-2">Book</span>  <span class="text-3">here"</span>
+            </p>
+           </div>
+           <div class="input-div"> 
+            <select class="dropdwn" id="rackDropdown" onchange="searchByRack()">
+                <option value="">Rack</option>
+                <option value="rack1">Rack1</option>
+                <option value="rack2">Rack2</option>
+                <option value="rack3">Rack3</option>
+                <option value="rack4">Rack4</option>
+            </select>
+              <input id="searchQuery" class="search" type="text" placeholder="Search for book">
+              <div class="icon">
+                <button onclick="redirectToResultsPage()" class="icon-but"><i class="fa-solid fa-magnifying-glass"></i></button>
+              </div>
+              <div id="resultContainer"></div>
+            </div>
+            <div class="main-box">
+                <a href="{{ url_for('category_books', category='firstyear',year='firstyear') }}" class="box-1">
+                    <img class="img-1" src="{{ url_for('static', filename='images/book-img2.jpg') }}">
+                    <p>First Year</p>
+                </a>
+                <a href="{{ url_for('category_books', category='secondyear',year='secondyear') }}" class="box-2">
+                    <img class="img-1" src="{{ url_for('static', filename='images/book-img1.jpg') }}">
+                    <p>Second Year</p>
+                </a>
+                <a href="{{ url_for('category_books', category='thirdyear',year='thirdyear') }}" class="box-3">
+                    <img class="img-1" src="{{ url_for('static', filename='images/book-img3.jpg') }}">
+                    <p>Third Year</p>
+                </a>
+                <a href="{{ url_for('category_books', category='fourthyear',year='fourthyear') }}" class="box-4">
+                    <img class="img-1" src="{{ url_for('static', filename='images/book-img4.jpg') }}">
+                    <p>Fourth Year</p>
+                </a>
+            </div>
+            <!-- <section class="about-section" id="about">
+                <h2 class="about-heading">About Us</h2>
+                <p class="about-subheading">Learn more about our platform and how it can benefit you.</p>
+                <div class="about-cards">
+                    <div class="about-card">
+                        <h3>Our Mission</h3>
+                        <p>To provide a content-based book search experience, enabling users to find the books they need quickly and effectively.</p>
+                        
+                    </div>
+                    <div class="about-card">
+                        <h3>Our Vision</h3>
+                        <p>Empowering readers and learners by making content-driven book discovery accessible to everyone, everywhere.</p>
+                        
+                    </div>
+                    <div class="about-card">
+                        <h3>Our Services</h3>
+                        <p>From advanced search functionalities to user-friendly interfaces, we are here to make your reading experience better.</p>
+                    </div>
+                </div>
+            </section> -->
+        </div>
+    </div>
+    <script>
+        function redirectToResultsPage() {
+            const query = document.getElementById('searchQuery').value.trim();
+            if (query) {
+                window.location.href = `/search?query=${encodeURIComponent(query)}`;
+            }
+        }
+
+        function searchByRack() {
+            const rackNumber = document.getElementById('rackDropdown').value;
+            if (rackNumber) {
+                window.location.href = `/search?rack=${encodeURIComponent(rackNumber)}`;
+            }
+        }
+
+        document.getElementById('logout').addEventListener('click', function() {
+            window.location.href = '/logout';
+        });
+    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

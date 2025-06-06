@@ -1,0 +1,102 @@
+/* General Styles for Results Container */
+.results-container {
+    max-width: 1200px; /* Increased max-width for better spacing */
+    margin: 30px auto;
+    padding: 20px;
+    background-color: rgba(254, 254, 254, 0.8); /* Slightly off-white background for contrast with transparency */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center;
+    background-image: url('../images/background-img1.jpg');
+
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+}
+
+/* Header for Search Results */
+h2 {
+    color: #f2f6fb; /* Darker shade for better visibility */
+    margin-bottom: 10px; /* Spacing below heading */
+}
+
+/* Total Results Count */
+p {
+    font-size: 1.3rem;
+    color: #ffffff; /* Subtle color for better readability */
+}
+.no {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Back to Search Button */
+.btn {
+    display: inline-block;
+    margin: 15px 0;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #9f3232; /* Blue background for button */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.btn:hover {
+    background-color: #3f2a20; /* Darker blue on hover */
+}
+
+/* Flexbox Layout for Results */
+.results-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping of items */
+    justify-content: center; /* Center the items */
+    gap: 20px; /* Spacing between cards */
+    margin-top: 20px; /* Space above results */
+}
+
+/* Individual Result Cards */
+.result-card {
+    background-color: #ffffff; /* White background for cards */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside the card */
+    width: 300px; /* Fixed width for consistency */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animation on hover */
+}
+
+.result-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Result Card Titles */
+.result-card h3 {
+    color: #9f3232; /* Blue color for titles */
+    margin-bottom: 10px; /* Space below title */
+    font-size: 1.2rem; /* Slightly larger font size */
+}
+
+/* Result Card Paragraphs */
+.result-card p {
+    font-size: 0.9rem; /* Normal paragraph size */
+    color: #333; /* Dark text for better contrast */
+    margin: 8px 0; /* Margin for spacing */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .results-grid {
+        flex-direction: column; /* Stack cards vertically on smaller screens */
+        align-items: center; /* Center items */
+    }
+    
+    .result-card {
+        width: 90%; /* Take full width on smaller screens */
+    }
+}

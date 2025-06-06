@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to BookFinder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <img class="logo" src="{{ url_for('static', filename='images/bookFinder-logo.jpeg') }}" alt="BookFinder Logo">
+            <h1 class="logo-heading">BookFinder</h1>
+        </div>
+    </header>
+
+    <!-- Welcome Section -->
+    <div class="welcome-container" style="background: url('{{ url_for('static', filename='images/background-img.jpg') }}') no-repeat center center/cover;">
+        <div class="intro-text">
+            <h2>Welcome to BookFinder</h2>
+            <p>Discover your Books from here.</p>
+            <button onclick="window.location.href='/home'">Get Started</button>
+        </div>
+    </div>
+
+    <!-- Feature Boxes -->
+    <div class="feature-container">
+        <div class="feature-box">
+            <h3>Search Books by Content</h3>
+            <p>Find books by searching within their content for relevant keywords.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Find Books Rack-Wise</h3>
+            <p>Locate books by selecting their rack location in the library.</p>
+        </div>
+        <div class="feature-box">
+            <h3>See Different Types of Books</h3>
+            <p>Browse through various genres and categories to find something new.</p>
+        </div>
+    </div>
+</body>
+</html>

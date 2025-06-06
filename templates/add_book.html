@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+</head>
+<body>
+    <h1>Add a New Book</h1>
+    <form method="POST" action="{{ url_for('add_book') }}">
+        <label for="category">Category:</label>
+        <select name="category" id="category" required>
+            <option value="story">Story</option>
+            <option value="subject">Subject</option>
+            <option value="sports">Sports</option>
+            <option value="technology">Technology</option>
+        </select>
+        <br>
+        <label for="book_name">Book Name:</label>
+        <input type="text" id="book_name" name="book_name" required>
+        <br>
+        <button type="submit">Add Book</button>
+    </form>
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>
